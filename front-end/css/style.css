@@ -314,4 +314,5 @@ input[type=text], input[type=password] {
 #timeChart2 {
 	margin-top: 47px;
 	margin-left:100px;
+	border-radius: 25px;
 }
