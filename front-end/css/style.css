@@ -132,6 +132,25 @@ input[type=text], input[type=password] {
 	text-align: center;
 	font-size: 15px;
 }
+.calendar2 {
+	margin-left: 10%;
+	left: 0;
+	width: 45%;
+	position: fixed;
+	margin-top: 75px;
+	text-align: center;
+	font-size: 15px;
+}
+
+.calendar3 {
+	margin-left: 32%;
+	left: 350px;
+	width: 45%;
+	position: fixed;
+	margin-top: 75px;
+	text-align: center;
+	font-size: 15px;
+}
 
 #navIcon {
 	margin-top: 15px;
@@ -294,5 +313,5 @@ input[type=text], input[type=password] {
 
 #timeChart2 {
 	margin-top: 47px;
-	margin-left: 50%;
+	margin-left:100px;
 }
