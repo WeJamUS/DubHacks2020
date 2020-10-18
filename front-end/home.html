@@ -13,42 +13,44 @@
 
 <body>
     <div class="menu">
-        <button class="groupButton">-</button>
+        <!-- <button class="groupButton">-</button> -->
         <div class="flyoutMenu">
             <h2><a href="#">Home</a></h2>
-            <h2><a href="#">Family</a></h2>
-            <h2><a href="group.html">The bois</a></h2>
-            <h2><a href="#">Create group</a></h2>
+            <h2><a href="#">Pals</a></h2>
+            <h2><a href="#">Add Group</a></h2>
         </div>
     </div>
     <div class="freeSchedule">
         <h1>When are you free?</h1>
         <h2>Your Schedule</h2>
     </div>
-    <div class="calender">
-        <p id=cal></p>
+    <div id="calender">
+
+    </div>
+    <div class="import">
+        <h3>Import your Calender</h3>
     </div>
 
     <script>
 
-        var roundButton = document.querySelector(".groupButton");
-        roundButton.addEventListener("click", showMenu, false);
+        // var roundButton = document.querySelector(".groupButton");
+        // roundButton.addEventListener("click", showMenu, false);
 
-        var flyoutMenu = document.querySelector(".flyoutMenu");
-        flyoutMenu.addEventListener("click", hideMenu, false);
+        // var flyoutMenu = document.querySelector(".flyoutMenu");
+        // flyoutMenu.addEventListener("click", hideMenu, false);
 
-        function showMenu(e) {
-            flyoutMenu.classList.add("show");
+        // function showMenu(e) {
+        //     flyoutMenu.classList.add("show");
 
-            document.body.style.overflow = "hidden";
-        }
+        //     document.body.style.overflow = "hidden";
+        // }
 
-        function hideMenu(e) {
-            flyoutMenu.classList.remove("show");
-            e.stopPropagation();
+        // function hideMenu(e) {
+        //     flyoutMenu.classList.remove("show");
+        //     e.stopPropagation();
 
-            document.body.style.overflow = "auto";
-        }
+        //     document.body.style.overflow = "auto";
+        // }
     </script>
 </body>
 
