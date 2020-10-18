@@ -67,9 +67,12 @@
    * @returns {object} Information from the fetch
    */
   async function checkStatus(resp) {
+    console.log("before check functions");
     if (resp.ok) {
+      console.log("in okay");
       return resp;
     } else {
+      console.log("in error");
       let error = await resp.json();
       console.log(error);
       throw new Error(error.error);

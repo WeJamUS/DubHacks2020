@@ -25,8 +25,11 @@ const pool = new Pool({
 
 app.get("/getAccounts", async function(req, res) {
   try {
+    console.log("before query");
     let accounts = await pgQuery("SELECT * FROM accounts;", []);
+    console.log("after query");
     let accountsJSON = JSON.parse(accounts);
+    console.log("after parse");
     console.log(accountsJSON);
     res.json(accountsJSON);
   } catch (error) {
