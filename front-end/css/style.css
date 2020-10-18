@@ -60,7 +60,10 @@ input[type=text], input[type=password] {
     position: fixed;
 	top: 0px;
 	left: 0;
+	text-align: center;
 	width: 10%;
+	height: 100%
+	
     /* transform: translate3d(-100vw, 0, 0);
     transition: transform .3s cubic-bezier(0, .52, 0, 1); */
 }
@@ -85,4 +88,11 @@ input[type=text], input[type=password] {
 
 .donthave {
 	font-size: 85%;
+}
+
+#navIcon {
+	margin-top: 15px;
+	width: 75px;
+	margin-left: auto;
+	margin-right: auto;
 }
