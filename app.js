@@ -3,20 +3,47 @@
 const express = require("express");
 const {google} = require('googleapis');
 const calendar = google.calendar('v3');
-const multer = require("multer");
+// const multer = require("multer");
 const request = require("request");
-const {Pool} = require('pg');
+// const {Pool} = require('pg');
 require('dotenv').config();
 const app = express();
 
 const INVALID_PARAM_ERROR = 400;
 const SERVER_ERROR = 500;
 const SERVER_ERROR_MSG = "Something went wrong on the server, please try again later.";
-const pool = new Pool({
-  ssl: {
-    rejectUnauthorized: false
-  },
-  connectionString: process.env.DATABASE_URL
+// const pool = new Pool({
+//   ssl: {
+//     rejectUnauthorized: false
+//   },
+//   connectionString: process.env.DATABASE_URL
+// });
+
+app.get("/getToken", async function(req, res) {
+  try {
+    if (req.query.authorizationCode) {
+      let options = {
+        method: 'POST',
+        url: 'https://oauth2.googleapis.com/token?client_id=305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com&client_secret=' + process.env.CLIENT_SECRET + '&redirect_uri=https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code&code=' + req.query.authorizationCode
+      };
+      await request(options, async function(error, response, body) {
+        if (error) {
+          console.log(error);
+          throw new Error(error);
+        }
+        let resp = JSON.parse(body);
+        console.log(body);
+        // if (resp.access_token !== undefined && resp.refresh_token !== undefined) {
+
+        // } else {
+        //   throw new Error("Invalid access or refresh tokens returned");
+        // }
+        res.json(body);
+      });
+    }
+  } catch (error) {
+    res.status(SERVER_ERROR).json({"error": SERVER_ERROR_MSG});
+  }
 });
 
 app.get("/getCalendar", async function(req, res) {
