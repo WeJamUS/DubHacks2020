@@ -24,7 +24,14 @@ app.get("/getToken", async function(req, res) {
     if (req.query.authorizationCode) {
       let options = {
         method: 'POST',
-        url: 'https://oauth2.googleapis.com/token?client_id=305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com&client_secret=' + process.env.CLIENT_SECRET + '&redirect_uri=https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code&code=' + req.query.authorizationCode
+        json: true,
+        body: {
+          client_id: '305 202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
+          client_secret: process.env.CLIENT_SECRET,
+          redirect_uri: 'https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code',
+          code: req.query.authorizationCode
+        },
+        url: 'https://oauth2.googleapis.com/token'
       };
       await request(options, async function(error, response, body) {
         if (error) {
