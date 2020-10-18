@@ -85,6 +85,7 @@ input[type=text], input[type=password] {
 }    */
 
 .freeSchedule {
+	left: 0;
 	text-align: center;
 	margin-left: 10%;
 	width: 90%;
@@ -92,12 +93,13 @@ input[type=text], input[type=password] {
 }
 
 .import {
+	left: 0;
 	margin-left: 10%;
 	width: 90%;
 	position: fixed;
 	bottom: 15px;
 	text-align: center;
-	font-size: 10px;
+	font-size: 15px;
 }
 
 .threeIcons {
@@ -106,6 +108,15 @@ input[type=text], input[type=password] {
 	margin-right: auto;
 }
 
+.calendar {
+	margin-left: 20%;
+	left: 0;
+	width: 80%;
+	position: fixed;
+	top: 12%;
+	text-align: center;
+	font-size: 15px;
+}
 
 #navIcon {
 	margin-top: 15px;
@@ -116,14 +127,33 @@ input[type=text], input[type=password] {
 
 #googleIcon {
 	float: right;
-	width: 80px;
+	width: 60px;
 }
 #outlookIcon {
-	width: 80px;
+	width: 60px;
 	margin: 0;
 }
 #appleIcon {
 	float: left;
-	width: 80px;
+	width: 60px;
 }
+
+#dates {
+	outline: blue dashed thin;
+	display: flex;
+	flex-direction: column;
+	width: 90%;
+  }
+  
+  #dates p {
+	width: 10%;
+	text-align: center;
+  }
+  
+  #dates > div {
+	display: flex;
+	justify-content: space-around;
+	margin: 10px;
+  }
+
 

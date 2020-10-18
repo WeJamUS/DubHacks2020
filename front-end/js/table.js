@@ -10,6 +10,7 @@ function displayCalendar() {
     let firstDay = dayOfDate(month, year, 1);
     let lastDay = dayOfDate(month, year, totalDays);
     fillDates(month, year, totalDays, firstDay, 6 - lastDay);
+    document.getElementById("month").innerHTML=month;
 }
 
 /**
@@ -22,15 +23,14 @@ function displayCalendar() {
  */
 function fillDates(month, year, totalDays, prevDays, nextDays) {
     let weekNumber = 1;
-    let week = id("week1");
-    let prevMonth = month - 1;
+    let week = id("week1");    let prevMonth = month - 1;
     let prevYear = year;
     if (prevMonth < 0) {
         prevYear = year - 1;
         prevMonth = 11;
     }
     addFillerDays(daysInMonth(prevMonth, prevYear) - prevDays + 1, prevDays, week);
-    for (let i = 1; i <= totalDays; i++) {
+    for (let i = 1; i <= totalDays; i++) {        
         if (week.children.length >= 7) {
             weekNumber++;
             week = id("week" + weekNumber);
@@ -87,5 +87,5 @@ function daysInMonth(month, year) {
  * @returns {integer} The day of the week as an integer
  */
 function dayOfDate(month, year, date) {
-    return new Date(year, month, date).getDay();
+    return new Date(year, month, date).getDay(); 
 }
