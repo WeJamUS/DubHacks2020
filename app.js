@@ -42,7 +42,8 @@ app.get("/getToken", async function(req, res) {
         body: {
           client_id: '305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
           client_secret: process.env.CLIENT_SECRET,
-          redirect_uri: 'https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code',
+          redirect_uri: 'https://walendar.herokuapp.com/authorization.html',
+          grant_type: 'authorization_code',
           code: req.query.authorizationCode
         },
         url: 'https://oauth2.googleapis.com/token'
@@ -52,7 +53,6 @@ app.get("/getToken", async function(req, res) {
           console.log(error);
           throw new Error(error);
         }
-        let resp = JSON.parse(body);
         console.log(body);
         // if (resp.access_token !== undefined && resp.refresh_token !== undefined) {
 
