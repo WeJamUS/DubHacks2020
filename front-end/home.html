@@ -29,20 +29,28 @@
         <h2 id="date"></h2>
         <div id="dates">
             <div>
-                <p>Su</p>
-                <p>M</p>
-                <p>Tu</p>
-                <p>W</p>
-                <p>Th</p>
-                <p>F</p>
-                <p>S</p>
+                <div id="day1">
+                    <p>Su</p>
+                </div>
+                <div id="day2">
+                    <p>M</p>
+                </div>
+                <div id="day3">
+                    <p>Tu</p>
+                </div>
+                <div id="day4">
+                    <p>W</p>
+                </div>
+                <div id="day5">
+                    <p>Th</p>
+                </div>
+                <div id="day6">
+                    <p>F</p>
+                </div>
+                <div id="day7">
+                    <p>S</p>
+                </div>
             </div>
-            <div id="week1"></div>
-            <div id="week2"></div>
-            <div id="week3"></div>
-            <div id="week4"></div>
-            <div id="week5"></div>
-            <div id="week6"></div>
         </div>
 
     </div>
@@ -64,6 +72,19 @@
 
 
     <script>
+        printTables()
+        function printTables() {
+            for (var x = 0; x < 7; x++) {
+                var tbl = document.createElement('table');
+                tbl.style.width  = '200px';
+                tbl.style.border = '1px solid black';
+                for (var y = 0; y < 96; y++) {
+                    tbl.insertRow();
+                }
+                document.getElementById("day" + (x + 1)).appendChild(tbl);
+            }
+        }
+        
         let daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
         /**
    * Displays the current week

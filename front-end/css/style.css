@@ -57,6 +57,18 @@ input[type=text], input[type=password] {
 	  outline: none;
 	  margin-bottom: 1rem;
   }
+.day {
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.5px; 
+	display: flex;
+	flex-direction: column;
+	width: 11.4%;
+	top: 25%;
+	position: fixed;
+	left: 0;
+	margin-left: 15%;
+}
 
 .groupButton {
 	background-color:#C4C4C4;
@@ -149,7 +161,9 @@ input[type=text], input[type=password] {
 }
 
 #dates {
-	outline: blue dashed thin;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.5px; 
 	display: flex;
 	flex-direction: column;
 	width: 80%;
@@ -157,6 +171,7 @@ input[type=text], input[type=password] {
 	position: fixed;
 	left: 0;
 	margin-left: 15%;
+	
   }
   
   #dates p {
@@ -167,7 +182,8 @@ input[type=text], input[type=password] {
   #dates > div {
 	display: flex;
 	justify-content: space-around;
-	margin: 10px;
+	margin: 5px;
+	
   }
 
   #date {
