@@ -40,7 +40,7 @@ app.get("/getToken", async function(req, res) {
         method: 'POST',
         json: true,
         body: {
-          client_id: '305 202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
+          client_id: '305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
           client_secret: process.env.CLIENT_SECRET,
           redirect_uri: 'https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code',
           code: req.query.authorizationCode
