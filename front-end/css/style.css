@@ -95,7 +95,7 @@ input[type=text], input[type=password] {
 	margin-left: 10%;
 	width: 90%;
 	position: fixed;
-	bottom: 10%;
+	bottom: 15px;
 	text-align: center;
 	font-size: 10px;
 }
@@ -110,7 +110,7 @@ input[type=text], input[type=password] {
 #googleIcon {
 	float: left;
 	padding-left: 35%;
-	width: 10%;
+	width: 50px;
 }
 #outlookIcon {
 	float: left;
