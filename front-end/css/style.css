@@ -100,6 +100,13 @@ input[type=text], input[type=password] {
 	font-size: 10px;
 }
 
+.threeIcons {
+	width:15%;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+
 #navIcon {
 	margin-top: 15px;
 	width: 60px;
@@ -108,15 +115,15 @@ input[type=text], input[type=password] {
 }
 
 #googleIcon {
-	float: left;
-	padding-left: 35%;
-	width: 50px;
+	float: right;
+	width: 80px;
 }
 #outlookIcon {
-	float: left;
-	width: 10%;
+	width: 80px;
+	margin: 0;
 }
 #appleIcon {
 	float: left;
-	width: 10%;
+	width: 80px;
 }
+
