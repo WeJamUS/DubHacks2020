@@ -5,26 +5,37 @@ const {google} = require('googleapis');
 const calendar = google.calendar('v3');
 // const multer = require("multer");
 const request = require("request");
-// const {Pool} = require('pg');
+const {Pool} = require('pg');
 require('dotenv').config();
 const app = express();
 
 const INVALID_PARAM_ERROR = 400;
 const SERVER_ERROR = 500;
 const SERVER_ERROR_MSG = "Something went wrong on the server, please try again later.";
-// const pool = new Pool({
-//   ssl: {
-//     rejectUnauthorized: false
-//   },
-//   connectionString: process.env.DATABASE_URL
-// });
+const pool = new Pool({
+  host: 'dubhacks20:us-west1:dubhacks2020',
+  hostaddr: '34.83.238.11',
+  user: 'postgres',
+  password: 'gajj20',
+  sslmode: 'verify-ca',
+  sslrootcert: 'server-ca.pem',
+  sslcert: 'client-cert.pem',
+  sslkey: 'client-key.pem'
+})
 
 app.get("/getToken", async function(req, res) {
   try {
     if (req.query.authorizationCode) {
       let options = {
         method: 'POST',
-        url: 'https://oauth2.googleapis.com/token?client_id=305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com&client_secret=' + process.env.CLIENT_SECRET + '&redirect_uri=https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code&code=' + req.query.authorizationCode
+        json: true,
+        body: {
+          client_id: '305 202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
+          client_secret: process.env.CLIENT_SECRET,
+          redirect_uri: 'https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code',
+          code: req.query.authorizationCode
+        },
+        url: 'https://oauth2.googleapis.com/token'
       };
       await request(options, async function(error, response, body) {
         if (error) {
@@ -90,6 +101,6 @@ async function pgQuery(qry, param) {
   }
 }
 
-app.use(express.static("public"));
+app.use(express.static("front-end"));
 const PORT = process.env.PORT || 8000;
 app.listen(PORT);
