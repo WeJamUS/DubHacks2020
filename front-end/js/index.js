@@ -6,6 +6,12 @@
 
   async function init() {
     await window.open('https://accounts.google.com/o/oauth2/v2/auth?client_id=305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com&redirect_uri=https://walendar.herokuapp.com/authorization.html&response_type=code&scope=https://www.googleapis.com/auth/calendar.events.readonly&access_type=offline&prompt=select_account');
+
+    //fetchGetJSON("/getAccounts", printOut);
+  }
+
+  function printOut(resp) {
+    console.log(resp);
   }
 
   /**
@@ -61,9 +67,12 @@
    * @returns {object} Information from the fetch
    */
   async function checkStatus(resp) {
+    console.log("before check functions");
     if (resp.ok) {
+      console.log("in okay");
       return resp;
     } else {
+      console.log("in error");
       let error = await resp.json();
       console.log(error);
       throw new Error(error.error);

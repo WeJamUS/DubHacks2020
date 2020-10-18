@@ -13,6 +13,7 @@
    * Passes the returned zoom authorization code to retrieve a zoom access token
    */
   async function init() {
+    console.log("inside init");
     let urlParams = new URLSearchParams(window.location.search);
     await fetch("/getToken?authorizationCode=" + urlParams.get("code"))
       .then(checkStatus)

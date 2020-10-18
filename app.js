@@ -13,15 +13,25 @@ const INVALID_PARAM_ERROR = 400;
 const SERVER_ERROR = 500;
 const SERVER_ERROR_MSG = "Something went wrong on the server, please try again later.";
 const pool = new Pool({
-  host: 'dubhacks20:us-west1:dubhacks2020',
-  hostaddr: '34.83.238.11',
-  user: 'postgres',
-  password: 'gajj20',
-  sslmode: 'verify-ca',
-  sslrootcert: 'server-ca.pem',
-  sslcert: 'client-cert.pem',
-  sslkey: 'client-key.pem'
-})
+  ssl: {
+    rejectUnauthorized: false
+  },
+  connectionString: process.env.DATABASE_URL
+});
+
+app.get("/getAccounts", async function(req, res) {
+  try {
+    console.log("before query");
+    let accounts = await pgQuery("SELECT * FROM accounts;", []);
+    console.log("after query");
+    let accountsJSON = JSON.parse(accounts);
+    console.log("after parse");
+    console.log(accountsJSON);
+    res.json(accountsJSON);
+  } catch (error) {
+    res.status(SERVER_ERROR).json({error: SERVER_ERROR_MSG});
+  }
+});
 
 app.get("/getToken", async function(req, res) {
   try {
@@ -30,7 +40,7 @@ app.get("/getToken", async function(req, res) {
         method: 'POST',
         json: true,
         body: {
-          client_id: '305 202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
+          client_id: '305202964565-8qf7cn9jrj25j5u7i0u09aadg2e6alk9.apps.googleusercontent.com',
           client_secret: process.env.CLIENT_SECRET,
           redirect_uri: 'https://walendar.herokuapp.com/authorization.html&grant_type=authorization_code',
           code: req.query.authorizationCode
@@ -90,7 +100,9 @@ app.get("/getCalendar", async function(req, res) {
  * @param {String[]} param Array of parameters for the query
  */
 async function pgQuery(qry, param) {
+  console.log("before connection");
   let client = await pool.connect();
+  console.log("after connection");
   try {
     let res = await client.query(qry, param);
     return res.rows;
