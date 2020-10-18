@@ -28,17 +28,44 @@ input[type=text], input[type=password] {
 	display: inline-block;
 	border: 1px solid #ccc;
 	box-sizing: border-box;
-  }
+}
 
-  .remember {
-	  font-size: 80%;
-  }
+.remember {
+	font-size: 80%;
+}
 
-  .signin {
+.signin {
 	  background-color: #446DFF;
 	  font-family: 'Montserrat', sans-serif;
 	  padding: 15px 120px;
 	  margin-top: 1.5rem;
 	  color: white;
 	  border-radius: 10px;
+	  outline: none;
   }
+
+.groupButton {
+	background-color:#C4C4C4;
+	width: 75px;
+	height: 75px;
+	top: 0px;
+	left: 0px;
+	position: fixed;
+}
+.flyoutMenu {
+    width: 10vw;
+    height: 100vh;
+    background-color: #C4C4C4;
+    position: fixed;
+	top: 75px;
+    left: 0;
+    transform: translate3d(-100vw, 0, 0);
+    transition: transform .3s cubic-bezier(0, .52, 0, 1);
+}
+.flyoutMenu.show {
+    transform: translate3d(0vw, 0, 0);
+}   
+
+.freeSchedule {
+	text-align: center;
+}
