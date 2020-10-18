@@ -1,34 +1,384 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="author" content="Albert Lam">
-    <meta name="description" content="Project">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
-    <title>Home</title>
-    <script type="text/javascript" src="js/table.js"></script>
-</head>
+    <head>
+        <meta charset="utf-8">
+        <meta name="author" content="Albert Lam">
+        <meta name="description" content="Project">
+        <link rel="stylesheet" type="text/css" href="css/style.css">
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+        <title>Home</title>
+        <script type="text/javascript" src="js/table.js"></script>
+    </head>
 
-<body>
-    <div class="menu">
-        <!-- <button class="groupButton">-</button> -->
-        <div class="flyoutMenu">
-            <img id="navIcon" src="img/navicon.svg">
-            <p><a href="home.html">Home</a></p>
-            <p><a href="group.html">Pals</a></p>
-            <p><a href="#">Add Group</a></p>
+    <body>
+        <div class="menu">
+            <!-- <button class="groupButton">-</button> -->
+            <div class="flyoutMenu">
+                <img id="navIcon" src="img/navicon.svg">
+                <p><a href="home.html">Home</a></p>
+                <p><a href="group.html">Pals</a></p>
+                <p><a href="#">Add Group</a></p>
+            </div>
         </div>
-    </div>
-    <div class="freeSchedule">
-        <h1>The Pals</h1>
-    </div>
-    <div id="calendar">
+        <div class="freeSchedule">
+            <h1>The Pals</h1>
+        </div>
+        <div class="calendar">
+            <table id="timeChart">
+                <tr class="times">
+                    <td>
+                        7:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        8:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        9:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        10:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        11:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        12:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        1:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        2:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        3:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        4:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        5:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        6:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        7:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        8:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        9:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        10:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        11:00pm
+                    </td>
+                </tr>
+            </table>
+            <div id="dates2">
+                <h2 id="date2"></h2>
+                <div class="chart">
+                    <div id="day1">
+                        <h1 class = days>Su</h1>
+                    </div>
+                    <div id="day2">
+                        <h1 class = days>M</h1>
+                    </div>
+                    <div id="day3">
+                        <h1 class = days>Tu</h1>
+                    </div>
+                    <div id="day4">
+                        <h1 class = days>W</h1>
+                    </div>
+                    <div id="day5">
+                        <h1 class = days>Th</h1>
+                    </div>
+                    <div id="day6">
+                        <h1 class = days>F</h1>
+                    </div>
+                    <div id="day7">
+                        <h1 class = days>S</h1>
+                    </div>
+                </div>
+            </div>
 
-    </div>
+        </div>
+        <div class="calendar">
+            <table id="timeChart2">
+                <tr class="times">
+                    <td>
+                        7:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        8:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        9:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        10:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        11:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        12:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        1:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        2:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        3:00am
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        4:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        5:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        6:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        7:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        8:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        9:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        10:00pm
+                    </td>
+                </tr>
+                <tr class="times">
+                    <td>
+                        11:00pm
+                    </td>
+                </tr>
+            </table>
+            <div id="dates3">
+                <h2 id="date3"></h2>
+                <div class="chart">
+                    <div id="day8">
+                        <h1 class = days>Su</h1>
+                    </div>
+                    <div id="day9">
+                        <h1 class = days>M</h1>
+                    </div>
+                    <div id="day10">
+                        <h1 class = days>Tu</h1>
+                    </div>
+                    <div id="day11">
+                        <h1 class = days>W</h1>
+                    </div>
+                    <div id="day12">
+                        <h1 class = days>Th</h1>
+                    </div>
+                    <div id="day13">
+                        <h1 class = days>F</h1>
+                    </div>
+                    <div id="day14">
+                        <h1 class = days>S</h1>
+                    </div>
+                </div>
+            </div>
+
+        </div>
 
 
-</body>
+    </body>
+    <script>
+    
+    function setBackgroundColor() {
+            if (this.style.backgroundColor == 'green') {
+                this.style.backgroundColor = 'white';
+            } else {
+                this.style.backgroundColor = 'green';
+            }
+    
+        }
+        
+        printTables()
+
+
+
+        cells = document.getElementsByClassName("highlightCells");
+
+        for (var x = 0; x < cells.length; x++) {
+            cells[x].addEventListener("click", setBackgroundColor);
+        }
+
+        function printTables() {
+            for (var x = 0; x < 7; x++) {
+                var tbl = document.createElement('table');
+                tbl.style.width  = '100px';
+                tbl.style.border = '1px solid black';
+                tbl.style.borderCollapse = "collapse";
+                for (var y = 0; y < 32; y++) {
+                    var tr = tbl.insertRow();
+                    tr.style.height = '21px';
+                    tr.style.padding = '0px';
+                    tr.style.margin = '0px';
+                    var td = tr.insertCell();
+                    td.className = "highlightCells";
+                    td.id = ""  + x  + " " + y;
+                    td.appendChild(document.createTextNode(''));
+                        td.style.border = '1px solid black';
+                }
+                document.getElementById("day" + (x + 1)).appendChild(tbl);
+            }
+
+            for (var x = 0; x < 7; x++) {
+                var tbl = document.createElement('table');
+                tbl.style.width  = '100px';
+                tbl.style.border = '1px solid black';
+                tbl.style.borderCollapse = "collapse";
+                for (var y = 0; y < 32; y++) {
+                    var tr = tbl.insertRow();
+                    tr.style.height = '21px';
+                    tr.style.padding = '0px';
+                    tr.style.margin = '0px';
+                    var td = tr.insertCell();
+                    td.className = "highlightCells";
+                    td.id = ""  + x  + " " + y;
+                    td.appendChild(document.createTextNode(''));
+                        td.style.border = '1px solid black';
+                }
+                document.getElementById("day" + (x + 8)).appendChild(tbl);
+            }
+        }
+        
+        let daysInMonth = [31, 29, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31];
+        /**
+   * Displays the current week
+   */   
+        displayWeek();
+        function displayWeek() {
+            let date = getSunday();
+            let day = date.getDate();
+            let month = date.getMonth();
+            let year = date.getYear() - 100;
+            //let year = date.getFullYear();
+            //id("month").textContent = MONTHS[month];
+            // let firstDay = dayOfDate(month, year, 1);
+            // let lastDay = dayOfDate(month, year, totalDays);
+            //fillDates(month, year, totalDays, firstDay, 6 - lastDay);
+            let nextWeek = getNextSunday(year, month, day);
+            document.getElementById("date2").innerHTML = (month + 1) + "/" + (day) + " - " + (nextWeek.getMonth() + 1) + "/" + (nextWeek.getDate());
+        }
+
+        function displayNextWeek() {
+            let sunday = getNextWeek();
+        }
+
+        function getSunday() {
+            let date = new Date();
+            let month = date.getMonth();
+            let daysAhead = date.getDay();
+            let year = date.getYear() - 100;
+            let day = date.getDate() - daysAhead;
+            if (day < 1) {
+                month = month - 1;
+                if (month < 0) {
+                    year = year - 1
+                }
+                day = day + daysInMonth[month]
+            }
+            return new Date(year, month, day);
+        }
+        /**
+         * Calculates the numeric date for next week
+         * @param {integer} month Current month
+         * @param {integer} totalDays Number of days in current month
+         * @param {integer} prevDays Number of days in previous month that will appear on the calendar
+         * @param {interger} nextDays Number of days in next month that will appear on the calendar
+         */
+        function getNextSunday(year, month, day){
+            day = day + 6;
+            if (day > daysInMonth[month]) {
+                day = day - daysInMonth[month];
+                month = month + 1;
+            }
+            if (month > 11) {
+                month = month -12;
+                year = year + 1;
+            }
+            nextWeek = new Date(year, month, day);
+            return nextWeek;
+        }
+
+    </script>
 
 </html>

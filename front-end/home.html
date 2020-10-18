@@ -13,7 +13,6 @@
 
 <body>
     <div class="menu">
-
         <div class="flyoutMenu">
             <img id="navIcon" src="img/navicon.svg">
             <p><a href="home.html">Home</a></p>
@@ -22,40 +21,127 @@
         </div>
     </div>
     <div class="freeSchedule">
-        <h1>When are you free?</h1>
-        <h2>Your Schedule</h2>
+        <h1 id = "whenFree">When are you free?</h1>
+        <h2 id = "yourSchedule">Your Schedule</h2>
     </div>
     <div class="calendar">
-        <h2 id="date"></h2>
+        <table id="timeChart">
+            <tr class="times">
+                <td>
+                    7:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    8:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    9:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    10:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    11:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    12:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    1:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    2:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    3:00am
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    4:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    5:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    6:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    7:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    8:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    9:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    10:00pm
+                </td>
+            </tr>
+            <tr class="times">
+                <td>
+                    11:00pm
+                </td>
+            </tr>
+        </table>
         <div id="dates">
-            <div>
+            <h2 id="date"></h2>
+            <div class="chart">
                 <div id="day1">
-                    <p>Su</p>
+                    <h1 class = days>Su</h1>
                 </div>
                 <div id="day2">
-                    <p>M</p>
+                    <h1 class = days>M</h1>
                 </div>
                 <div id="day3">
-                    <p>Tu</p>
+                    <h1 class = days>Tu</h1>
                 </div>
                 <div id="day4">
-                    <p>W</p>
+                    <h1 class = days>W</h1>
                 </div>
                 <div id="day5">
-                    <p>Th</p>
+                    <h1 class = days>Th</h1>
                 </div>
                 <div id="day6">
-                    <p>F</p>
+                    <h1 class = days>F</h1>
                 </div>
                 <div id="day7">
-                    <p>S</p>
+                    <h1 class = days>S</h1>
                 </div>
             </div>
         </div>
 
     </div>
     <div class="import">
-        <h3>Import your Calendar</h3>
+        <h3 id = "importCalender">Import your Calendar</h3>
 
         <div class="threeIcons">
             <a href="google.com">
@@ -72,14 +158,42 @@
 
 
     <script>
+
+        function setBackgroundColor() {
+            if (this.style.backgroundColor == 'green') {
+                this.style.backgroundColor = 'white';
+            } else {
+                this.style.backgroundColor = 'green';
+            }
+    
+        }
+        
         printTables()
+
+
+
+        cells = document.getElementsByClassName("highlightCells");
+
+        for (var x = 0; x < cells.length; x++) {
+            cells[x].addEventListener("click", setBackgroundColor);
+        }
+
         function printTables() {
             for (var x = 0; x < 7; x++) {
                 var tbl = document.createElement('table');
-                tbl.style.width  = '200px';
+                tbl.style.width  = '220px';
                 tbl.style.border = '1px solid black';
-                for (var y = 0; y < 96; y++) {
-                    tbl.insertRow();
+                tbl.style.borderCollapse = "collapse";
+                for (var y = 0; y < 32; y++) {
+                    var tr = tbl.insertRow();
+                    tr.style.height = '21px';
+                    tr.style.padding = '0px';
+                    tr.style.margin = '0px';
+                    var td = tr.insertCell();
+                    td.className = "highlightCells";
+                    td.id = ""  + x  + " " + y;
+                    td.appendChild(document.createTextNode(''));
+                        td.style.border = '1px solid black';
                 }
                 document.getElementById("day" + (x + 1)).appendChild(tbl);
             }
@@ -144,7 +258,6 @@
             return nextWeek;
         }
 
-        window.onload = displayCalendar();
     </script>
 </body>
 

@@ -105,27 +105,30 @@ input[type=text], input[type=password] {
 }
 
 .import {
+	top: auto;
+	margin-bottom: 0;
 	left: 0;
 	margin-left: 10%;
 	width: 90%;
 	position: fixed;
-	bottom: 15px;
+	bottom: 0px;
 	text-align: center;
 	font-size: 15px;
 }
 
 .threeIcons {
+	margin-top: 5px;
 	width:15%;
 	margin-left: auto;
 	margin-right: auto;
 }
 
 .calendar {
-	margin-left: 20%;
+	margin-left: 10%;
 	left: 0;
-	width: 80%;
+	width: 90%;
 	position: fixed;
-	top: 12%;
+	margin-top: 75px;
 	text-align: center;
 	font-size: 15px;
 }
@@ -162,36 +165,134 @@ input[type=text], input[type=password] {
 
 #dates {
 	border-style: solid;
-	border-radius: 10px;
+	/* border-radius: 10px; */
 	border-width: 1.5px; 
 	display: flex;
 	flex-direction: column;
 	width: 80%;
-	top: 18%;
 	position: fixed;
-	left: 0;
-	margin-left: 15%;
-	
+	margin-left: 0;
+	top: 85px;
+	left: 15%;
+  }
+  #dates2 {
+	border-style: solid;
+	/* border-radius: 10px; */
+	border-width: 1.5px; 
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+	position: fixed;
+	margin-left: 0;
+	top: 85px;
+	left: 15%;
+  }
+  #dates3 {
+	border-style: solid;
+	/* border-radius: 10px; */
+	border-width: 1.5px; 
+	display: flex;
+	flex-direction: column;
+	width: 700px;
+	position: fixed;
+	margin-left: 0;
+	top: 85px;
+	left: 60%;
   }
   
   #dates p {
-	width: 10%;
+	width: 0%;
 	text-align: center;
   }
   
   #dates > div {
 	display: flex;
 	justify-content: space-around;
-	margin: 5px;
-	
+  }
+
+  #dates2 p {
+	width: 0%;
+	text-align: center;
+  }
+  
+  #dates2 > div {
+	display: flex;
+	justify-content: space-around;
+  }
+  #dates3 p {
+	width: 0%;
+	text-align: center;
+  }
+  
+  #dates3 > div {
+	display: flex;
+	justify-content: space-around;
   }
 
   #date {
 	left: 0;
 	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 0;
 	margin-left: 10%;
 	width: 90%;
 	position: fixed;
   }
 
+  #date2 {
+	left: 0;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 0;
+	margin-left: 15%;
+	width: 700px;
+	position: fixed;
+  }
+  #date3 {
+	left: 0;
+	text-align: center;
+	margin-top: 5px;
+	margin-bottom: 0;
+	margin-left: 15%;
+	width: 700px;
+	position: fixed;
+  }
 
+  .chart {
+	  font-size: 15px;
+	  margin-top: 25px;
+  }
+  
+  .days {
+	  margin-top: 0;
+	  margin-bottom: 0;
+	  margin-left: auto;
+	  margin-right: auto;
+  }
+#yourSchedule {
+	margin-top: 0;
+}
+#whenFree {
+	margin-top: 0;
+	margin-bottom: 5px;
+}
+
+#importCalendar {
+	margin-top:0;
+	margin-bottom: 7px;
+}
+
+.times {
+
+	height: 37px;
+}
+
+#timeChart {
+	margin-top: 47px;
+	margin-left: 12px;
+}
+
+#timeChart2 {
+	margin-top: 47px;
+	margin-left: 50%;
+}
