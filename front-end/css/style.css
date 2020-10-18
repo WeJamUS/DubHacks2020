@@ -17,7 +17,7 @@ body {
 	text-align: center;
 }
 
-input::placeholder {
+input::placeholder, input[type=text] {
 	font-family: 'Montserrat', sans-serif;
   }
 
@@ -42,6 +42,7 @@ input[type=text], input[type=password] {
 	  color: white;
 	  border-radius: 10px;
 	  outline: none;
+	  margin-bottom: 1rem;
   }
 
 .groupButton {
@@ -80,4 +81,8 @@ input[type=text], input[type=password] {
 	bottom: 10%;
 	text-align: center;
 	font-size: 10px;
+}
+
+.donthave {
+	font-size: 85%;
 }

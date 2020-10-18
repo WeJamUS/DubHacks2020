@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="author" content="Albert Lam">
+    <meta name="description" content="Project">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <script type="text/javascript" src="js/table.js"></script>
+</head>
+
+<body>
+    <div class="menu">
+        <button class="groupButton">-</button>
+        <div class="flyoutMenu">
+            <h2><a href="#">Home</a></h2>
+            <h2><a href="#">Family</a></h2>
+            <h2><a href="group.html">The bois</a></h2>
+            <h2><a href="#">Create group</a></h2>
+        </div>
+    </div>
+    <div class="freeSchedule">
+        <h1>When are you free?</h1>
+        <h2>Your Schedule</h2>
+    </div>
+    <div class="calender">
+        <p id=cal></p>
+    </div>
+
+    <script>
+
+        var roundButton = document.querySelector(".groupButton");
+        roundButton.addEventListener("click", showMenu, false);
+
+        var flyoutMenu = document.querySelector(".flyoutMenu");
+        flyoutMenu.addEventListener("click", hideMenu, false);
+
+        function showMenu(e) {
+            flyoutMenu.classList.add("show");
+
+            document.body.style.overflow = "hidden";
+        }
+
+        function hideMenu(e) {
+            flyoutMenu.classList.remove("show");
+            e.stopPropagation();
+
+            document.body.style.overflow = "auto";
+        }
+    </script>
+</body>
+
+</html>
