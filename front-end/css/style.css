@@ -75,6 +75,7 @@ input[type=text], input[type=password] {
 	text-align: center;
 	margin-left: 10%;
 	width: 90%;
+	position: fixed;
 }
 
 .import {
@@ -95,4 +96,17 @@ input[type=text], input[type=password] {
 	width: 75px;
 	margin-left: auto;
 	margin-right: auto;
+}
+
+#googleIcon {
+	padding-left: 33.33%;
+	width: 75px;
+}
+#outlookIcon {
+	float: left;
+	width: 75px;
+}
+#appleIcon {
+	float: left;
+	width: 75px;
 }
