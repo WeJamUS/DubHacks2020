@@ -1,6 +1,8 @@
 "use strict";
 
 const express = require("express");
+const {google} = require('googleapis');
+const calendar = google.calendar('v3');
 const multer = require("multer");
 const request = require("request");
 const {Pool} = require('pg');
@@ -17,9 +19,26 @@ const pool = new Pool({
   connectionString: process.env.DATABASE_URL
 });
 
-app.get("", async function(req, res) {
+app.get("/getCalendar", async function(req, res) {
   try {
+    let options = {
+      method: 'GET',
+      url: 'https://www.googleapis.com/calendar/v3/calendars/primary'
+    };
+    await request(options, async function(error, response, body) {
+      if (error) {
+        console.log(error);
+        throw new Error(error);
+      }
+      let resp = JSON.parse(body);
+      console.log(resp);
+      // if (resp.access_token !== undefined && resp.refresh_token !== undefined) {
 
+      // } else {
+      //   throw new Error("Invalid access or refresh tokens returned");
+      // }
+      res.json({"data": resp});
+    });
   } catch (error) {
     res.status(SERVER_ERROR).json({"error": SERVER_ERROR_MSG});
   }
