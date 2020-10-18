@@ -13,15 +13,11 @@ const INVALID_PARAM_ERROR = 400;
 const SERVER_ERROR = 500;
 const SERVER_ERROR_MSG = "Something went wrong on the server, please try again later.";
 const pool = new Pool({
-  host: 'dubhacks20:us-west1:dubhacks2020',
-  hostaddr: '34.83.238.11',
-  user: 'postgres',
-  password: 'gajj20',
-  // sslmode: 'verify-ca',
-  // sslrootcert: 'server-ca.pem',
-  // sslcert: 'client-cert.pem',
-  // sslkey: 'client-key.pem'
-})
+  ssl: {
+    rejectUnauthorized: false
+  },
+  connectionString: process.env.DATABASE_URL
+});
 
 app.get("/getAccounts", async function(req, res) {
   try {
