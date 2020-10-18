@@ -23,6 +23,17 @@ const pool = new Pool({
   sslkey: 'client-key.pem'
 })
 
+app.get("/getAccounts", async function(req, res) {
+  try {
+    let accounts = await pgQuery("SELECT * FROM accounts;", []);
+    let accountsJSON = JSON.parse(accounts);
+    console.log(accountsJSON);
+    res.json(accountsJSON);
+  } catch (error) {
+    res.status(SERVER_ERROR).json({error: SERVER_ERROR_MSG});
+  }
+});
+
 app.get("/getToken", async function(req, res) {
   try {
     if (req.query.authorizationCode) {
