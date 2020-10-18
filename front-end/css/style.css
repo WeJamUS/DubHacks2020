@@ -99,14 +99,15 @@ input[type=text], input[type=password] {
 }
 
 #googleIcon {
-	padding-left: 33.33%;
-	width: 75px;
+	float: left;
+	padding-left: 35%;
+	width: 10%;
 }
 #outlookIcon {
 	float: left;
-	width: 75px;
+	width: 10%;
 }
 #appleIcon {
 	float: left;
-	width: 75px;
+	width: 10%;
 }
