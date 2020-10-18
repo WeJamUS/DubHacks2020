@@ -17,10 +17,10 @@ const pool = new Pool({
   hostaddr: '34.83.238.11',
   user: 'postgres',
   password: 'gajj20',
-  sslmode: 'verify-ca',
-  sslrootcert: 'server-ca.pem',
-  sslcert: 'client-cert.pem',
-  sslkey: 'client-key.pem'
+  // sslmode: 'verify-ca',
+  // sslrootcert: 'server-ca.pem',
+  // sslcert: 'client-cert.pem',
+  // sslkey: 'client-key.pem'
 })
 
 app.get("/getAccounts", async function(req, res) {
@@ -104,7 +104,9 @@ app.get("/getCalendar", async function(req, res) {
  * @param {String[]} param Array of parameters for the query
  */
 async function pgQuery(qry, param) {
+  console.log("before connection");
   let client = await pool.connect();
+  console.log("after connection");
   try {
     let res = await client.query(qry, param);
     return res.rows;
