@@ -128,21 +128,35 @@ input[type=text], input[type=password] {
 #googleIcon {
 	float: right;
 	width: 60px;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.5px;  
 }
 #outlookIcon {
 	width: 60px;
 	margin: 0;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.5px;  
 }
+
 #appleIcon {
 	float: left;
 	width: 60px;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1.5px;
 }
 
 #dates {
 	outline: blue dashed thin;
 	display: flex;
 	flex-direction: column;
-	width: 90%;
+	width: 80%;
+	top: 18%;
+	position: fixed;
+	left: 0;
+	margin-left: 15%;
   }
   
   #dates p {
@@ -154,6 +168,14 @@ input[type=text], input[type=password] {
 	display: flex;
 	justify-content: space-around;
 	margin: 10px;
+  }
+
+  #date {
+	left: 0;
+	text-align: center;
+	margin-left: 10%;
+	width: 90%;
+	position: fixed;
   }
 
 
